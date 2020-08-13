@@ -6,7 +6,8 @@ const Login = () => {
   const { authState, authService } = useOktaAuth();
 
   const login = () => {
-    authService.login(window.location.origin + "/login");
+    authService.login();
+    authService.updateAuthState();
   }
 
   const notifySuccessCallback = () => {
